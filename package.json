@@ -1,0 +1,19 @@
+{
+  "name": "interactive-rating-component-main",
+  "version": "1.0.0",
+  "description": "C'est un composant de notage.",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./style.scss:./style.css --style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/developor45ju/Composant-de-notage-interactif.git"
+  },
+  "author": "Julien Heng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/developor45ju/Composant-de-notage-interactif/issues"
+  },
+  "homepage": "https://github.com/developor45ju/Composant-de-notage-interactif#readme"
+}
