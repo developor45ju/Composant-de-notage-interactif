@@ -1,0 +1,122 @@
+$veryDarkBlue: hsl(216, 12%, 8%);
+$darkBlue: hsl(213, 19%, 18%);
+$mediumGrey: hsl(216, 12%, 54%, 0.205);
+$lightGrey: hsl(217, 12%, 63%);
+$white: hsl(0, 0%, 100%);
+$orange: hsl(25, 97%, 53%);
+html {
+    height: 100%;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: $veryDarkBlue;
+    .card {
+        p {
+            font-size: 15px;
+        }
+        padding: 2rem;
+        font-family: 'Overpass', sans-serif;
+        position: absolute;
+        z-index: 1;
+        background-color: $darkBlue;
+        height: auto;
+        width: 25%;
+        border-radius: 20px;
+        .card-star_circle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 3rem;
+            width: 3rem;
+            background-color: $mediumGrey;
+            border-radius: 100%;
+        }
+        .card-question {
+            color: $white;
+        }
+        .card-instruction {
+            color: $lightGrey;
+        }
+        .card-stars {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        @mixin bordeRadius {
+            @for $i from 0 to 6 {
+                .card-star_#{$i} {
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: $white;
+                    padding: 5px;
+                    height: 30px;
+                    width: 30px;
+                    border-radius: 100%;
+                    text-align: center;
+                    cursor: pointer;
+                    background-color: $mediumGrey;
+                    &:hover {
+                        background-color: $orange;
+                    }
+                    &:active {
+                        background-color: $lightGrey;
+                        color: $white;
+                    }
+                }
+            }
+        }
+        @include bordeRadius();
+        .submit {
+            display: block;
+            width: 100%;
+            background-color: $orange;
+            border-radius: 50em;
+            border: none;
+            text-transform: uppercase;
+            color: $white;
+            padding: 10px 0;
+            margin-top: 1.5rem;
+            cursor: pointer;
+            &:hover {
+                background-color: $white;
+                color: $orange;
+            }
+        }
+        .main-secondPage {
+            display: none;
+            text-align: center;
+            :nth-child(2) {
+                font-weight: bold;
+                margin: 1rem 25%;
+                padding: 2%;
+                background-color: $mediumGrey;
+                border-radius: 20em;
+                color: $orange;
+            }
+            :nth-child(3) {
+                color: $white;
+            }
+            :nth-child(4) {
+                color: $lightGrey;
+            }
+        }
+    }
+    @media (max-width: 350px) {
+        .card {
+            width: 75%;
+            @for $i from 0 to 6 {
+                .card-star_#{$i} {
+                    height: 25%;
+                    width: 25%;
+                }
+            }
+            * {
+                font-size: 75%;
+            }
+        }
+    }
+}
